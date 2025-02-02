@@ -11,8 +11,8 @@ int main()
     b=a-b;
     a=a-b;
 
-    printf("\n\n A= %f",a);
-     printf("\n\n B= %f",b);
+    printf("\n\n A= %.2f",a);
+     printf("\n\n B= %.2f",b);
 
      return 0;
 }
