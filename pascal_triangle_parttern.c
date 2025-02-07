@@ -17,7 +17,10 @@ int main()
         
         {
             printf("%4d ", val);
+            
             val = val * (i - j) / (j + 1);  // Compute next value
+        
+            
         }
         printf("\n");
     }
