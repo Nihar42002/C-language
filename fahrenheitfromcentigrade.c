@@ -9,12 +9,6 @@ int main()
 
     printf("\nFahrenheit= %f",ft);
 
-     printf("\n\nEnter the value of Fahrenheit=");
-    scanf("%f",&ft);
-
-    ct=(ft-32)/1.8;
-
-     printf("\nCentigrade= %f",ct);
 
      return 0;
 
