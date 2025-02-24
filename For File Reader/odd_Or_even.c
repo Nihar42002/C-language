@@ -1,43 +1,41 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-FILE *fptr;
+    FILE *fptr, *even, *odd;
 
-fptr=fopen("text.txt","r");
+    fptr = fopen("text.txt", "r");
+    if (fptr == NULL) {
+        printf("Error: Could not open text.txt\n");
+        return 1; // Exit with error code
+    }
 
-if (fptr == NULL) {
-   printf("Error: Could not open file.\n");
-   return 1; // Exit with error code
-}
+    even = fopen("even.txt", "w");
+    odd = fopen("odd.txt", "w");
 
-char ch;
+    if (even== NULL || odd == NULL) {
+        printf("Error: Could not create output files\n");
+        fclose(fptr);
+        return 1;
+    }
 
-printf("EVEN: \n");
-printf("---------------------------\n");
-while((ch=fgetc(fptr))!=EOF)
- {
-    if(ch%2==0||ch==0)
-    {
-    printf("%c\n",ch);
-   
-    }  
- }
+    char ch;
 
- rewind(fptr);
+    // Write even ASCII characters to even.txt
+    while ((ch = fgetc(fptr)) != EOF) {
+        if (ch % 2 == 0) {
+            fprintf(even, "%c", ch);
+        } else {
+            fprintf(odd, "%c\t", ch);
+        }
+    }
 
+    // Close all files
+    fclose(fptr);
+    fclose(even);
+    fclose(odd);
 
- printf("ODD: \n");
- printf("---------------------------\n");
- while((ch=fgetc(fptr))!=EOF)
- {
-    if(ch%2!=0||ch==0)
-    {
-    printf("%c\n",ch);
-   
-    }  
-   
- }
- fclose(fptr);
- return 0;
+    printf("Characters have been separated into even.txt and odd.txt\n");
+
+    return 0;
 }
