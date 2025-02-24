@@ -38,9 +38,6 @@ while((ch=fgetc(fptr))!=EOF)
     }  
    
  }
-
-
  fclose(fptr);
  return 0;
-
 }
