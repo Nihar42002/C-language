@@ -1,44 +1,48 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct cricket
+// Structure to store individual cricket player details
+typedef struct cricket 
 {
-    char name[50];
-    char tname[50];
-    float baverage;
+    char name[50];   // Player's name
+    char tname[50];  // Team name
+    float baverage;  // Batting average
 } crick;
 
-struct team
+// Structure to store team names
+struct team 
 {
-    char Team_name[15];
+    char Team_name[15]; // Name of the team
 };
 
-void Team_counting(crick players[], int total_players, struct team team_name[])
+// Function to count and display players from each team
+void Team_counting(crick players[], int total_players, struct team team_name[]) 
 {
-    for (int i = 0; i < 12; i++) // Loop through teams
-    {
-        int found = 0;
+    for (int i = 0; i < 12; i++) 
+    { // Loop through the 12 teams
+        int found = 0; // Flag to check if players exist for the team
         printf("\nTeam: %s:-\n", team_name[i].Team_name);
         printf("---------------------------\n");
 
-        for (int j = 0; j < total_players; j++) // Loop through players
-        {
-            if (strcmp(players[j].tname, team_name[i].Team_name) == 0) // Compare correctly
-            {
-                printf("%s - %.2f\n", players[j].name, players[j].baverage);
-                found = 1;
+        for (int j = 0; j < total_players; j++) // Loop through all players
+        { 
+            if (strcmp(players[j].tname, team_name[i].Team_name) == 0) // Compare player's team name with the current team 
+            { 
+                printf("%s - %.2f\n", players[j].name, players[j].baverage); // Print player's name and batting average
+                found = 1; // Mark that at least one player was found
             }
         }
 
-        if (!found)
-        {
+        if (!found) 
+        { // If no players found for the team
             printf("No players found for this team.\n");
         }
     }
 }
 
-int main()
+int main() 
 {
+    // Array of cricket players with their names, teams, and batting averages
     struct cricket players[50] = {
         {"Virat Kohli", "India", 59.3}, {"Rohit Sharma", "India", 49.8}, {"Shubman Gill", "India", 47.5},
         {"Steve Smith", "Australia", 61.2}, {"David Warner", "Australia", 45.7}, {"Marnus Labuschagne", "Australia", 50.9},
@@ -58,6 +62,7 @@ int main()
         {"Temba Bavuma", "South Africa", 39.4}, {"Craig Ervine", "Zimbabwe", 38.8}, {"Sikandar Raza", "Zimbabwe", 37.6}
     };
 
+    // Array of teams participating
     struct team team_name[] = {
         {"India"}, {"Australia"}, {"England"}, {"Pakistan"},
         {"New Zealand"}, {"South Africa"}, {"West Indies"},
@@ -65,10 +70,10 @@ int main()
         {"Ireland"}, {"Zimbabwe"}
     };
 
-    int total_players = 50;
-    
+    int total_players = 50; // Number of players in the list
 
+    // Call function to display players grouped by team
     Team_counting(players, total_players, team_name);
 
-    return 0;
+    return 0; // End of program
 }

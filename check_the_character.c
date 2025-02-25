@@ -2,10 +2,10 @@
 int main()
 {
     char ch;
-    printf("Enter the Character=");
+    printf("Enter the Character="); // Enter any chararter  
     scanf("%c",&ch);
 
-    if(ch>='A'&& ch<='Z')
+    if(ch>='A'&& ch<='Z') //check the condition.
     {
       printf("Capital Letter");
     }

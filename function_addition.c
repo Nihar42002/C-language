@@ -1,43 +1,47 @@
-#include<stdio.h>
-int add(int,int);
-float addi(int,int);
+#include <stdio.h>  // Include standard input-output library
 
-int main()
+// Function prototype declarations
+int add(int, int);   // Function to return the sum of two integers
+float addi(int, int); // Function to return the sum as a floating-point value
+
+int main() 
 {
-    char d[30]; 
-int a,b,c,i;
-float p,h,k;
+    char d[30];  // Unused character array (can be removed)
+    int a, b, c, i;  // Integer variables
+    float p, h, k;   // Floating-point variables
 
-printf("Enter number :");
-scanf("%d",&a);
-printf("Enter number :");
-scanf("%d",&b);
+    // Taking user input for two numbers
+    printf("Enter number: ");
+    scanf("%d", &a);
+    printf("Enter number: ");
+    scanf("%d", &b);
 
-p=a;
-h=b;
+    p = a;  // Assigning integer 'a' to float variable 'p'
+    h = b;  // Assigning integer 'b' to float variable 'h'
 
-c=add(a,b);
-k=addi(p,h);
+    // Function calls
+    c = add(a, b);   // Call integer addition function
+    k = addi(p, h);  // Call floating-point addition function
 
+    // Displaying results
+    printf("\n Addition (int): %d", c);
+    printf("\n Addition (float): %.2f", k);
 
-printf("\n Addtion:  %d",c);
-printf("\n Addtion:  %.2f",k);
-
+    return 0;  // Exit the program successfully
 }
-int add(int a,int b)
+
+// Function to add two integers and return the result
+int add(int a, int b) 
 {
-   
- int c;
- c=a+b;
- return c;
+    int c;
+    c = a + b;
+    return c;
 }
-float addi(int p ,int h)
+
+// Function to add two integers and return the result as a float
+float addi(int p, int h) 
 {
-    
     float k;
-    k=p+h;
-return k;
-
+    k = p + h;
+    return k;
 }
-
-

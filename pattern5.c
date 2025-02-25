@@ -1,16 +1,21 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>  // Include standard input-output library
+
+int main() 
 {
-    int i,j;
+    int i, j;  // Declare integer variables for loop counters
 
-    for(i=5;i>=1;i--)
+    // Outer loop: Controls the number of rows (starting from 5 and decreasing to 1)
+    for (i = 5; i >= 1; i--) 
     {
-        for(j=1;j<=i;j++)
+        
+        // Inner loop: Prints the value of 'i' 'i' times in each row
+        for (j = 1; j <= i; j++) 
         {
-            printf("%d",i);
-
+            printf("%d", i);  // Print the current row number
         }
-        printf("\n");
+
+        printf("\n");  // Move to the next line after printing a row
     }
-    return 0;
+
+    return 0;  // Exit the program successfully
 }

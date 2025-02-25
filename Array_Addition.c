@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
-{
-    int a[3][3],b[3][3],c[3][3],i,j;
+{    
+    int a[3][3],b[3][3],c[3][3],i,j; //declaration of arrays
 
     for(i=0;i<3;i++)
     {
@@ -25,7 +25,7 @@ int main()
         }
     }
 
-    for(i=0;i<3;i++)
+    for(i=0;i<3;i++) // loop to add two arrays
     {
         for(j=0;j<3;j++)
 

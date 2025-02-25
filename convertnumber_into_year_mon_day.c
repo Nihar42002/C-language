@@ -6,10 +6,10 @@ int main()
     printf("Enter the Random Number=");
     scanf("%d",&n);
 
-    year=n/365;
-    dl=n/30;
-    month=dl-(year*12);
-    day=n%30;
+    year=n/365;   // calculate the year
+    dl=n/30; 
+    month=dl-(year*12); // Calculate the month.
+    day=n%30; // calculate day.
 
     printf("\nYEARS=%d",year);
     printf("\nMONTH=%d",month);
