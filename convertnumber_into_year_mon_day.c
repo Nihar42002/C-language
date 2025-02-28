@@ -1,8 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    int n,year,month,dl;
+    int n,year;
     int day;
+    float month,dl;
     printf("Enter the Random Number=");
     scanf("%d",&n);
 
@@ -12,7 +13,7 @@ int main()
     day=n%30; // calculate day.
 
     printf("\nYEARS=%d",year);
-    printf("\nMONTH=%d",month);
+    printf("\nMONTH=%.2f",month);
     printf("\nDAYS=%d",day);
 
     return 0;
