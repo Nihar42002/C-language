@@ -3,7 +3,7 @@
 
 // Global variable declaration
 float pi = 3.14;  // Define the value of Pi
-float r;          // Declare a global variable for radius
+float r;       // Declare a global variable for radius
 
 // Function prototype declaration
 void Area();  // Function to calculate the total surface area of a cone
