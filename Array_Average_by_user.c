@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i,n,s=0;
+    int i,n,s=0,a;
 
     printf("Give the size of Array="); //declaring the size of array.
     scanf("%d",&n);
@@ -14,11 +14,12 @@ int main()
 
         s=s+a[i];
 
-    }
+    } 
 
-   s=s/n;
+   a=s/n;
 
-    printf("Answer =%d",s);
+    printf("Answer =%d\n",s);
+    printf("Average =%d",a);
 
     return 0;
 

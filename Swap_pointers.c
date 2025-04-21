@@ -20,7 +20,7 @@ int main()
     *ptrb = t;   // Assign the stored value of 'a' to 'b'
 
     // Display swapped values
-    printf("\nA = %.2f\n", *ptra);
+    printf("\nA = %.2f\n",*ptra);
     printf("B = %.2f\n", *ptrb);
 
     return 0; // Return 0 to indicate successful execution
