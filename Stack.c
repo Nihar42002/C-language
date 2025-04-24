@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_SIZE 10
+#define MAX_SIZE 10 // Maximum size of the stack
 
-int stack[MAX_SIZE];
-int top = -1; // Initialize top of stack to -1 (empty stack)
+int stack[MAX_SIZE]; // Array to implement the stack
+int top = -1;        // Variable to track the top of the stack, -1 indicates the stack is empty
 
 // Function to check if the stack is empty
 int isEmpty() {
@@ -19,8 +19,10 @@ int isFull() {
 // Function to push an element onto the stack
 void push(int value) {
     if (isFull()) {
+        // If the stack is full, print an error message
         printf("Stack Overflow! Cannot push %d\n", value);
     } else {
+        // Increment top and insert the value
         top++;
         stack[top] = value;
         printf("%d pushed onto the stack\n", value);
@@ -30,9 +32,11 @@ void push(int value) {
 // Function to pop an element from the stack
 int pop() {
     if (isEmpty()) {
+        // If the stack is empty, print an error and return -1
         printf("Stack Underflow! Cannot pop\n");
-        return -1; // Return -1 to indicate an error (or a suitable error value)
+        return -1;
     } else {
+        // Return the top element and decrement the top
         int poppedValue = stack[top];
         top--;
         printf("%d popped from the stack\n", poppedValue);
@@ -40,21 +44,25 @@ int pop() {
     }
 }
 
-// Function to peek at the top element of the stack
+// Function to view the top element of the stack without removing it
 int peek() {
     if (isEmpty()) {
+        // If the stack is empty, print a message and return -1
         printf("Stack is empty, cannot peek\n");
-        return -1; // Return -1 to indicate an error (or a suitable error value)
+        return -1;
     } else {
+        // Return the top element
         return stack[top];
     }
 }
 
-// Function to display the stack
+// Function to display all elements of the stack
 void display() {
     if (isEmpty()) {
+        // If the stack is empty, print a message
         printf("Stack is empty\n");
     } else {
+        // Print all elements from bottom to top
         printf("Stack elements: ");
         for (int i = 0; i <= top; i++) {
             printf("%d ", stack[i]);
@@ -63,14 +71,19 @@ void display() {
     }
 }
 
+// Main function to demonstrate stack operations
 int main() {
-    push(10);
-    push(20);
-    push(30);
-    display();
-    pop();
-    display();
-    printf("Top element: %d\n", peek());
+    push(10);  // Push 10 onto the stack
+    push(20);  // Push 20 onto the stack
+    push(30);  // Push 30 onto the stack
+    display(); // Display current stack: 10 20 30
+
+    pop();     // Pop the top element (30)
+    display(); // Display updated stack: 10 20
+
+    printf("Top element: %d\n", peek()); // Peek at the top element (20)
+
+    // Pushing more elements to fill up the stack
     push(40);
     push(50);
     push(60);
@@ -78,10 +91,15 @@ int main() {
     push(80);
     push(90);
     push(100);
-    push(110); //stack overflow example
-    display(); //stack overflow example
-    printf("Top element: %d\n", peek());
-    push(89);
 
-    return 0;
+    // This push should cause overflow because the stack is full
+    push(110); // Expected overflow error
+    display(); // Display all current elements
+
+    printf("Top element: %d\n", peek()); // Peek at the top element (100)
+
+    // Another push to show overflow again
+    push(89);  // Will again trigger overflow
+
+    return 0;  // End of program
 }
